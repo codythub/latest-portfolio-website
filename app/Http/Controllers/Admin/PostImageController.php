@@ -24,7 +24,7 @@ class PostImageController extends Controller
         return response()->json([
             'success' => 1,
             'file' => [
-                'url' => asset('storage/' . $path),
+                'url' => Storage::disk('public')->url($path),
             ],
         ]);
     }
