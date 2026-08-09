@@ -165,12 +165,8 @@
         </main>
 
         <x-public.footer
-            active="about"
             :profile="$profile"
             :settings="$siteSettings"
-            footer-class="bg-[#191a1e] px-9 py-9 text-base font-medium text-[#8f929b] sm:px-16 sm:py-10"
-            nav-class="flex flex-wrap gap-6 text-[20px] sm:gap-4 sm:text-base"
-            credit-class="font-medium text-[20px] sm:text-base"
         />
     </div>
 </body>

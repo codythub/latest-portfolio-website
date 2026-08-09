@@ -48,10 +48,10 @@
 
     <div class="min-h-screen">
         <header
-            class="site-hero relative h-[300px] overflow-hidden bg-[#020815] text-white"
+            class="site-hero relative h-[350px] overflow-hidden bg-[#020815] text-white"
             style="--site-hero-image: url('{{ $blogHeroImage }}');"
         >
-            <nav class="relative z-10 mx-auto flex w-full max-w-[1248px] items-center justify-between px-6 pt-12 sm:px-8 sm:pt-16">
+            <nav class="relative z-10 mx-auto flex w-full max-w-[1320px] items-center justify-between px-6 pt-12 sm:px-16 sm:pt-[72px]">
                 <button
                     type="button"
                     onclick="if (window.history.length > 1) { window.history.back(); } else { window.location.href = '{{ route('home', ['type' => 'blog']) }}'; }"
@@ -117,7 +117,7 @@
                 </div>
             </nav>
 
-            <div class="relative z-10 mx-auto flex h-[180px] max-w-[820px] flex-col items-center justify-center px-6 pb-7 pt-8 text-center">
+            <div class="relative z-10 mx-auto flex max-w-[820px] flex-col items-center px-6 pb-8 pt-12 text-center sm:px-16 sm:pb-10 sm:pt-10">
                 @if ($post->category)
                     <a
                         href="{{ route('blog.index', [

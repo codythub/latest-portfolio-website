@@ -27,7 +27,7 @@
                 style="--site-hero-image: url('{{ \Illuminate\Support\Facades\Storage::disk('public')->url($heroImage) }}');"
             @endif
         >
-            <nav class="relative z-10 mx-auto flex w-full max-w-[1130px] items-center justify-between px-4 pt-8 sm:px-8 sm:pt-16">
+            <nav class="relative z-10 mx-auto flex w-full max-w-[1320px] items-center justify-between px-6 pt-12 sm:px-16 sm:pt-[72px]">
                 <button
                     type="button"
                     onclick="if (window.history.length > 1) { window.history.back(); } else { window.location.href = '{{ url('/') }}'; }"
@@ -91,7 +91,7 @@
                 </div>
             </nav>
 
-            <div class="relative z-10 mx-auto flex h-[180px] max-w-[900px] flex-col items-center justify-center px-6 pb-7 pt-8 text-center">
+            <div class="relative z-10 mx-auto flex max-w-[900px] flex-col items-center px-6 pb-8 pt-12 text-center sm:px-16 sm:pb-10 sm:pt-10">
                 
                 @if ($project->category)
                     <p
