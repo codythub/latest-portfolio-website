@@ -394,7 +394,13 @@
                             @disabled($hasLiked)
                             class="inline-flex items-center gap-2 transition hover:text-[#ff3b3f] disabled:cursor-default disabled:opacity-100"
                         >
-                            <span id="like-icon" class="text-[28px] font-normal leading-none text-[#ff3b3f]" aria-hidden="true">{!! $hasLiked ? '&#9829;' : '&#9825;' !!}</span>
+                            <img
+                                id="like-icon"
+                                src="{{ asset('images/icons/si_heart-line.svg') }}"
+                                alt=""
+                                aria-hidden="true"
+                                class="h-7 w-7"
+                            >
                             <span id="like-label" class="sr-only">
                                 {{ $hasLiked ? 'Already liked' : 'Like' }}
                             </span>
@@ -520,7 +526,12 @@
                                         </a>
 
                                         <p class="inline-flex items-center gap-2 text-base font-normal leading-none text-[#a6a9b1]">
-                                            <span class="text-[28px] leading-none text-[#ff3b3f]" aria-hidden="true">&#9825;</span>
+                                            <img
+                                                src="{{ asset('images/icons/si_heart-line.svg') }}"
+                                                alt=""
+                                                aria-hidden="true"
+                                                class="h-7 w-7"
+                                            >
                                             {{ $relatedPost->likes_count }}
                                         </p>
                                     </div>
@@ -546,7 +557,6 @@
                 .getAttribute('content');
 
             const likeButton = document.getElementById('like-button');
-            const likeIcon = document.getElementById('like-icon');
             const likeLabel = document.getElementById('like-label');
             const likesCount = document.getElementById('likes-count');
 
@@ -585,10 +595,6 @@
                     likeLabel.textContent = data.liked
                         ? 'Already liked'
                         : 'Like';
-
-                    likeIcon.textContent = data.liked
-                        ? String.fromCharCode(9829)
-                        : String.fromCharCode(9825);
 
                     likesCount.textContent = data.likes_count;
 
