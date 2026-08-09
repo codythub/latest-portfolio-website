@@ -288,7 +288,7 @@
                     @if ($post->thumbnail)
                         <div class="aspect-video overflow-hidden rounded-[18px] bg-[#f4f5f7]">
                             <img
-                                src="{{ asset('storage/' . $post->thumbnail) }}"
+                                src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($post->thumbnail) }}"
                                 alt="{{ $post->title }}"
                                 class="h-full w-full object-contain"
                             >

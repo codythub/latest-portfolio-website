@@ -24,7 +24,7 @@
         <header
             class="site-hero relative h-[350px] overflow-hidden bg-[#020815] text-white"
             @if ($heroImage)
-                style="--site-hero-image: url('{{ asset('storage/' . $heroImage) }}');"
+                style="--site-hero-image: url('{{ \Illuminate\Support\Facades\Storage::disk('public')->url($heroImage) }}');"
             @endif
         >
             <nav class="relative z-10 mx-auto flex w-full max-w-[1130px] items-center justify-between px-4 pt-8 sm:px-8 sm:pt-16">
@@ -197,7 +197,7 @@
                         $galleryItems = $project->galleryImages
                             ->map(function ($galleryImage) {
                                 return [
-                                    'src' => asset('storage/' . $galleryImage->image),
+                                    'src' => \Illuminate\Support\Facades\Storage::disk('public')->url($galleryImage->image),
                                     'alt' => $galleryImage->alt_text,
                                 ];
                             })

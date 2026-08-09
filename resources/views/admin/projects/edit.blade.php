@@ -376,7 +376,7 @@
                     @if ($project->thumbnail)
                         <div class="aspect-[187/116] overflow-hidden rounded-[18px] bg-[#f4f5f7]">
                             <img
-                                src="{{ asset('storage/' . $project->thumbnail) }}"
+                                src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($project->thumbnail) }}"
                                 alt="{{ $project->title }} thumbnail"
                                 class="h-full w-full object-contain"
                             >
@@ -428,7 +428,7 @@
                             <div class="rounded-[18px] border border-[#dedfe4] bg-white p-4">
                                 <div class="aspect-video overflow-hidden rounded-[14px] bg-[#f4f5f7]">
                                     <img
-                                        src="{{ asset('storage/' . $galleryImage->image) }}"
+                                        src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($galleryImage->image) }}"
                                         alt="{{ $galleryImage->alt_text }}"
                                         class="h-full w-full object-contain"
                                     >

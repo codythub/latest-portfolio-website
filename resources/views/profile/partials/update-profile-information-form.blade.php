@@ -136,7 +136,7 @@
             <div class="flex flex-col gap-6 sm:flex-row sm:items-center">
                 @if ($user->avatar)
                     <img
-                        src="{{ asset('storage/' . $user->avatar) }}"
+                        src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($user->avatar) }}"
                         alt="{{ $user->name }}"
                         class="h-28 w-28 rounded-full object-cover"
                     >

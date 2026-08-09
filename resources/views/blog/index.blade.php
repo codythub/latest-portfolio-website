@@ -31,7 +31,7 @@
 <body class="bg-[#f7f7f8] font-inter font-normal text-[#33343a] antialiased">
     @php
         // Temporary source. Later this can come from Admin -> Site Settings.
-        $siteHeroBackgroundImage = asset('storage/projects/thumbnails/4AHr0Js5j51L9Z3XpyDVjqhuWpBqZflpT1mQ5PkF.png');
+        $siteHeroBackgroundImage = \Illuminate\Support\Facades\Storage::disk('public')->url('projects/thumbnails/4AHr0Js5j51L9Z3XpyDVjqhuWpBqZflpT1mQ5PkF.png');
     @endphp
 
     <header
@@ -140,7 +140,7 @@
                         @if ($post->thumbnail)
                             <a href="{{ route('blog.show', $post) }}">
                                 <img
-                                    src="{{ asset('storage/' . $post->thumbnail) }}"
+                                    src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($post->thumbnail) }}"
                                     alt="{{ $post->title }}"
                                     width="400"
                                 >

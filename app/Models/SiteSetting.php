@@ -43,7 +43,7 @@ class SiteSetting extends Model
 
     public static function fallbackHeroBackgroundUrl(): string
     {
-        return asset('storage/' . self::DEFAULT_HERO_BACKGROUND_PATH);
+        return Storage::disk('public')->url(self::DEFAULT_HERO_BACKGROUND_PATH);
     }
 
     public function heroBackgroundUrl(): string
@@ -69,6 +69,6 @@ class SiteSetting extends Model
             return null;
         }
 
-        return asset(Storage::url($path));
+        return Storage::disk('public')->url($path);
     }
 }

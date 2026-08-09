@@ -266,7 +266,7 @@
                                 <li class="flex items-center gap-3">
                                     @if ($tool->logo_path)
                                         <img
-                                            src="{{ asset('storage/' . $tool->logo_path) }}"
+                                            src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($tool->logo_path) }}"
                                             alt=""
                                             aria-hidden="true"
                                             class="h-5 w-5 shrink-0 object-contain"
@@ -300,7 +300,7 @@
                                     <li class="flex items-center gap-3">
                                         @if ($tool->logo_path)
                                             <img
-                                                src="{{ asset('storage/' . $tool->logo_path) }}"
+                                                src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($tool->logo_path) }}"
                                                 alt=""
                                                 aria-hidden="true"
                                                 class="h-5 w-5 shrink-0 object-contain"
@@ -577,7 +577,7 @@
                                         >
                                             @if ($post->thumbnail)
                                                 <img
-                                                    src="{{ asset('storage/' . $post->thumbnail) }}"
+                                                    src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($post->thumbnail) }}"
                                                     alt="{{ $post->title }} thumbnail"
                                                     class="motion-card-image h-full w-full object-cover"
                                                 >
@@ -669,7 +669,7 @@
                                     >
                                         @if ($project->thumbnail)
                                             <img
-                                                src="{{ asset('storage/' . $project->thumbnail) }}"
+                                                src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($project->thumbnail) }}"
                                                 alt="{{ $project->title }} thumbnail"
                                                 class="motion-card-image h-full w-full object-cover"
                                             >

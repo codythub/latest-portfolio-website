@@ -43,7 +43,7 @@
                             <div class="aspect-[187/116] w-full overflow-hidden rounded-[16px] bg-[#f4f5f7] sm:aspect-auto sm:h-[96px] sm:w-[132px]">
                                 @if ($post->thumbnail)
                                     <img
-                                        src="{{ asset('storage/' . $post->thumbnail) }}"
+                                        src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($post->thumbnail) }}"
                                         alt="{{ $post->title }} thumbnail"
                                         class="h-full w-full object-cover"
                                     >

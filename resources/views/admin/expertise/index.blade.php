@@ -117,7 +117,7 @@
                                         @if ($section['has_logo_upload'])
                                             @if ($item->logo_path)
                                                 <img
-                                                    src="{{ asset('storage/' . $item->logo_path) }}"
+                                                    src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($item->logo_path) }}"
                                                     alt=""
                                                     aria-hidden="true"
                                                     class="h-11 w-11 rounded-full border border-[#dedfe4] bg-white object-contain p-2"
@@ -249,7 +249,7 @@
                                                         @if ($item->logo_path)
                                                             <div class="flex items-center gap-3 rounded-[14px] border border-[#dedfe4] p-3">
                                                                 <img
-                                                                    src="{{ asset('storage/' . $item->logo_path) }}"
+                                                                    src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($item->logo_path) }}"
                                                                     alt=""
                                                                     aria-hidden="true"
                                                                     class="h-10 w-10 rounded-full bg-white object-contain p-1.5"

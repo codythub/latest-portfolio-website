@@ -4,7 +4,7 @@
     @php
         $siteSettings = \App\Models\SiteSetting::current();
         $blogHeroImage = $post->thumbnail
-            ? asset('storage/' . $post->thumbnail)
+            ? \Illuminate\Support\Facades\Storage::disk('public')->url($post->thumbnail)
             : \App\Models\SiteSetting::fallbackHeroBackgroundUrl();
     @endphp
 
@@ -436,7 +436,7 @@
                     <section class="mx-auto max-w-[832px] px-6 pt-12 sm:flex sm:items-center sm:gap-8 sm:px-8">
                         @if ($post->author->avatar)
                             <img
-                                src="{{ asset('storage/' . $post->author->avatar) }}"
+                                src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($post->author->avatar) }}"
                                 alt="{{ $post->author->name }}"
                                 class="h-[90px] w-[90px] rounded-full object-cover sm:h-[145px] sm:w-[145px]"
                             >

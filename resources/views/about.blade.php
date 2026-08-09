@@ -151,7 +151,7 @@
 
                         @if ($resumeExists)
                             <a
-                                href="{{ asset('storage/' . $profile->resume_path) }}"
+                                href="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($profile->resume_path) }}"
                                 download="{{ basename($profile->resume_path) }}"
                                 class="mt-8 inline-flex border-b border-[#303136] pb-1 text-base font-medium text-[#303136] transition hover:text-[#111216]"
                             >
