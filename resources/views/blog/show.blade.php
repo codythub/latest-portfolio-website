@@ -57,7 +57,9 @@
                     onclick="if (window.history.length > 1) { window.history.back(); } else { window.location.href = '{{ route('home', ['type' => 'blog']) }}'; }"
                     class="inline-flex h-10 items-center gap-2 rounded-full bg-white px-4 text-base font-medium text-[#2f3035] shadow-sm transition hover:bg-slate-100 sm:h-11 sm:px-5"
                 >
-                    <span class="text-xl leading-none" aria-hidden="true">&larr;</span>
+                    <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.5 4.5L7 10L12.5 15.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                     <span>Back</span>
                 </button>
 
@@ -392,15 +394,18 @@
                             data-url="{{ route('blog.like', $post) }}"
                             aria-pressed="{{ $hasLiked ? 'true' : 'false' }}"
                             @disabled($hasLiked)
-                            class="inline-flex items-center gap-2 transition hover:text-[#ff3b3f] disabled:cursor-default disabled:opacity-100"
+                            class="blog-like-button inline-flex items-center gap-2 transition hover:text-[#ff3b3f] disabled:cursor-default disabled:opacity-100"
                         >
-                            <img
+                            <svg
                                 id="like-icon"
-                                src="{{ asset('images/icons/si_heart-line.svg') }}"
-                                alt=""
+                                class="h-7 w-7 text-[#dc2626] transition"
+                                viewBox="0 0 24 24"
+                                fill="none"
                                 aria-hidden="true"
-                                class="h-7 w-7"
+                                xmlns="http://www.w3.org/2000/svg"
                             >
+                                <path class="blog-like-icon-heart" d="M16.696 3C14.652 3 12.887 4.197 12 5.943C11.113 4.197 9.348 3 7.304 3C4.374 3 2 5.457 2 8.481C2 11.505 3.817 14.277 6.165 16.554C8.513 18.831 12 21 12 21C12 21 15.374 18.867 17.835 16.554C20.46 14.088 22 11.514 22 8.481C22 5.448 19.626 3 16.696 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                             <span id="like-label" class="sr-only">
                                 {{ $hasLiked ? 'Already liked' : 'Like' }}
                             </span>

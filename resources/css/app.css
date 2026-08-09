@@ -123,6 +123,15 @@
         transform: translate(3px, -3px);
     }
 
+    .blog-like-button .blog-like-icon-heart {
+        fill: transparent;
+        transition: fill 180ms ease;
+    }
+
+    .blog-like-button[aria-pressed="true"] .blog-like-icon-heart {
+        fill: currentColor;
+    }
+
     .motion-ready .motion-reveal {
         opacity: 0;
         transform: translateY(14px);
