@@ -77,7 +77,7 @@
                 </div>
             </nav>
 
-            <div class="relative z-10 mx-auto flex h-[180px] max-w-[820px] flex-col items-center justify-center px-6 pb-7 pt-8 text-center">
+            <div class="relative z-10 mx-auto flex max-w-[820px] flex-col items-center px-6 pb-10 pt-20 text-center sm:pb-12 sm:pt-24">
                 <h1 class="font-syne text-[48px] font-bold leading-tight tracking-normal text-white">
                     {{ $siteSettings->contact_heading }}
                 </h1>

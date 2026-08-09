@@ -1,5 +1,5 @@
 @props([
-    'active' => 'work',
+    'active' => null,
     'profile' => null,
     'settings' => null,
     'footerClass' => 'bg-[#191a1e] px-6 py-8 text-base font-medium text-[#8f929b] sm:px-16 sm:py-10',
@@ -18,6 +18,15 @@
         ['key' => 'about', 'label' => 'About', 'href' => route('about')],
         ['key' => 'contact', 'label' => 'Get in Touch', 'href' => route('contact')],
     ];
+
+    $active ??= match (true) {
+        request()->routeIs('about') => 'about',
+        request()->routeIs('contact', 'contact.*') => 'contact',
+        request()->routeIs('blog.*') => 'blog',
+        request()->routeIs('projects.*') => 'work',
+        request()->routeIs('home') && request()->query('type') === 'blog' => 'blog',
+        default => 'work',
+    };
 
     $heart = '♥';
     $heartPosition = strpos($creditText, $heart);

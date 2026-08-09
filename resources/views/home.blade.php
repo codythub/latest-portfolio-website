@@ -780,7 +780,6 @@
         </main>
 
         <x-public.footer
-            :active="$showBlog ? 'blog' : 'work'"
             :profile="$profile"
             :settings="$siteSettings"
         />

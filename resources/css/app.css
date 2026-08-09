@@ -72,6 +72,8 @@
 
     .public-theme-icon-sun {
         display: none;
+        height: 1.5rem;
+        width: 1.5rem;
     }
 
     html.public-dark body:not(.admin-interface) .public-theme-icon-moon {

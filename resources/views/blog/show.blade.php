@@ -48,7 +48,7 @@
 
     <div class="min-h-screen">
         <header
-            class="site-hero relative h-[350px] overflow-hidden bg-[#020815] text-white"
+            class="site-hero relative h-[430px] overflow-hidden bg-[#020815] text-white"
             style="--site-hero-image: url('{{ $blogHeroImage }}');"
         >
             <nav class="relative z-10 mx-auto flex w-full max-w-[1320px] items-center justify-between px-6 pt-12 sm:px-16 sm:pt-[72px]">
@@ -535,7 +535,6 @@
         </main>
 
         <x-public.footer
-            active="blog"
             :settings="$siteSettings"
         />
     </div>

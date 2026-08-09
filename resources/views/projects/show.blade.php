@@ -22,7 +22,7 @@
 
     <div class="min-h-screen">
         <header
-            class="site-hero relative h-[350px] overflow-hidden bg-[#020815] text-white"
+            class="site-hero relative h-[430px] overflow-hidden bg-[#020815] text-white"
             @if ($heroImage)
                 style="--site-hero-image: url('{{ \Illuminate\Support\Facades\Storage::disk('public')->url($heroImage) }}');"
             @endif
@@ -33,7 +33,7 @@
                     onclick="if (window.history.length > 1) { window.history.back(); } else { window.location.href = '{{ url('/') }}'; }"
                     class="inline-flex h-9 items-center gap-2 rounded-full bg-white px-4 text-base font-medium text-[#2f3035] shadow-sm transition hover:bg-slate-100 sm:h-10 sm:px-5"
                 >
-                    <span aria-hidden="true">&lt;-</span>
+                    <span class="text-xl leading-none" aria-hidden="true">&larr;</span>
                     <span>Back</span>
                 </button>
 
@@ -381,7 +381,7 @@
                             class="inline-flex items-center border-b border-[#303136] pb-2 text-base font-medium uppercase tracking-normal text-[#303136] transition hover:text-[#111216]"
                         >
                             View next project
-                            <span class="ml-3 text-2xl font-normal leading-none" aria-hidden="true">-></span>
+                            <span class="ml-3 text-2xl font-normal leading-none" aria-hidden="true">→</span>
                         </a>
                     </div>
                 @endif
@@ -389,7 +389,6 @@
         </main>
 
         <x-public.footer
-            active="work"
             :settings="$siteSettings"
             footer-class="bg-[#191a1e] px-4 py-8 text-base font-medium text-[#8f929b] sm:px-8 sm:py-10"
             container-class="mx-auto flex max-w-[1130px] flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"
