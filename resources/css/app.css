@@ -190,6 +190,11 @@
         .motion-ready .motion-reveal {
             opacity: 1;
         }
+
+    }
+
+    .blog-content a {
+        color: #08a9f4;
     }
 }
 
