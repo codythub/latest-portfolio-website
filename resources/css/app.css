@@ -196,6 +196,18 @@
     .blog-content a {
         color: #08a9f4;
     }
+
+    .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+
 }
 
 @layer utilities {

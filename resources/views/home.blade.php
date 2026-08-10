@@ -179,7 +179,7 @@
                 </div>
             </div>
 
-            <div class="motion-reveal -mx-6 mb-14 flex gap-3 overflow-x-auto px-6 pb-1 lg:hidden">
+            <div class="motion-reveal hide-scrollbar -mx-6 mb-14 flex gap-3 overflow-x-auto px-6 pb-1 lg:hidden">
                 <a
                     href="{{ route('home') }}"
                     @class([
