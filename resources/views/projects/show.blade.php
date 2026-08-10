@@ -187,8 +187,18 @@
                                 </h2>
                             @endif
 
+                            @php
+                                $formattedBody = e($section->body);
+
+                                $formattedBody = preg_replace(
+                                    '/\*\*(.+?)\*\*/s',
+                                    '<strong class="font-semibold text-[#303136]">$1</strong>',
+                                    $formattedBody
+                                );
+                            @endphp
+
                             <p class="max-w-[770px] whitespace-pre-line text-base font-normal leading-6 text-[#414349]">
-                                {{ $section->body }}
+                                {!! $formattedBody !!}
                             </p>
                         </section>
                     @endforeach

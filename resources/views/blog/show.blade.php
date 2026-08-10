@@ -157,7 +157,7 @@
 
                 @if (! empty($blocks))
                     <section class="mx-auto max-w-[832px] px-6 pt-8 sm:px-8 sm:pt-12">
-                        <div class="space-y-6 text-base font-normal leading-6 text-[#414349]">
+                        <div class="blog-content space-y-6 text-base font-normal leading-6 text-[#414349]">
                             @foreach ($blocks as $block)
                                 @php
                                     $type = $block['type'] ?? '';
