@@ -141,7 +141,7 @@
 
                         @if ($aboutText)
                             <p class="mt-6 text-base font-normal leading-7 text-[#303136] sm:text-[18px] sm:leading-8">
-                                {{ $aboutText }}
+                                {!! nl2br(e($aboutText)) !!}
                             </p>
                         @elseif ($profile->professional_title)
                             <p class="mt-6 text-base font-normal leading-7 text-[#303136] sm:text-[18px] sm:leading-8">
