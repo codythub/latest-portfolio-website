@@ -207,6 +207,16 @@
         scrollbar-width: none;
     }
 
+    .blog-content > p:first-of-type::first-letter {
+        float: left;
+        margin-right: 0.35rem;
+        margin-top: 0.15rem;
+        font-family: 'Syne', sans-serif;
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 0.8;
+        color: #08a9f4;
+    }
 
 }
 
