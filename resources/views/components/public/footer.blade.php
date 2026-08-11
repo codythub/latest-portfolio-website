@@ -11,7 +11,7 @@
 
 @php
     $settings = $settings ?? \App\Models\SiteSetting::current();
-    $creditText = $settings->footer_credit_text ?: \App\Models\SiteSetting::DEFAULT_FOOTER_CREDIT_TEXT;
+
     $links = [
         ['key' => 'work', 'label' => 'Work', 'href' => route('home')],
         ['key' => 'blog', 'label' => 'Blog', 'href' => route('home', ['type' => 'blog'])],
@@ -28,9 +28,20 @@
         default => 'work',
     };
 
-    $heart = '♥';
-    $heartPosition = strpos($creditText, $heart);
+    $dayMessage = match (now()->format('l')) {
+        'Monday' => 'Make Monday count 🚀',
+        'Tuesday' => 'Tuesday, we move 😌',
+        'Wednesday' => 'Midweek, keep going ✨',
+        'Thursday' => 'Have a good Thursday 🙌',
+        'Friday' => 'Happy Friday 🎉',
+        'Saturday' => 'Enjoy your Saturday ☀️',
+        'Sunday' => 'Have a restful Sunday 🌿',
+    };
+
+    
 @endphp
+
+
 
 <footer class="{{ $footerClass }}" data-public-footer>
     <div class="{{ $containerClass }}">
@@ -49,11 +60,7 @@
         </nav>
 
         <p class="{{ $creditClass }}">
-            @if ($heartPosition !== false)
-                {{ substr($creditText, 0, $heartPosition) }}<span class="text-white" aria-hidden="true">{{ $heart }}</span>{{ substr($creditText, $heartPosition + strlen($heart)) }}
-            @else
-                {{ $creditText }}
-            @endif
+            {{ $dayMessage }}
         </p>
 
         <div class="flex gap-4 text-white">
