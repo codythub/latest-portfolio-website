@@ -23,6 +23,7 @@
         "@editorjs/embed": "^2.7.7",
         "@editorjs/header": "^2.8.9",
         "@editorjs/image": "^2.10.3",
+        "@editorjs/inline-code": "^1.5.2",
         "@editorjs/list": "^2.0.9",
         "@editorjs/quote": "^2.7.6",
         "chart.js": "^4.5.1"

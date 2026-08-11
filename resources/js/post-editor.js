@@ -3,6 +3,7 @@ import Header from '@editorjs/header';
 import List from '@editorjs/list';
 import Quote from '@editorjs/quote';
 import CodeTool from '@editorjs/code';
+import InlineCode from '@editorjs/inline-code';
 import Embed from '@editorjs/embed';
 import ImageTool from '@editorjs/image';
 
@@ -128,6 +129,11 @@ if (editorHolder && postForm && bodyInput) {
             },
 
             code: CodeTool,
+
+            inlineCode: {
+                class: InlineCode,
+                shortcut: 'CMD+SHIFT+M',
+            },
 
             embed: {
                 class: SocialEmbed,
