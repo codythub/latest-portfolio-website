@@ -1,6 +1,9 @@
 @props([
     'title' => null,
     'description' => null,
+    'image' => null,
+    'url' => null,
+    'type' => 'website',
     'settings' => null,
     'csrf' => false,
 ])
@@ -10,6 +13,7 @@
     $resolvedTitle = $title ?: $settings->default_seo_title;
     $resolvedDescription = $description ?: $settings->default_meta_description;
     $faviconUrl = $settings->faviconUrl();
+    $resolvedUrl = $url ?: url()->current();
 @endphp
 
 <meta charset="UTF-8">
@@ -21,6 +25,30 @@
 
 @if ($resolvedDescription)
     <meta name="description" content="{{ $resolvedDescription }}">
+@endif
+
+<meta property="og:title" content="{{ $resolvedTitle }}">
+
+@if ($resolvedDescription)
+    <meta property="og:description" content="{{ $resolvedDescription }}">
+@endif
+
+<meta property="og:url" content="{{ $resolvedUrl }}">
+<meta property="og:type" content="{{ $type }}">
+
+@if ($image)
+    <meta property="og:image" content="{{ $image }}">
+@endif
+
+<meta name="twitter:card" content="{{ $image ? 'summary_large_image' : 'summary' }}">
+<meta name="twitter:title" content="{{ $resolvedTitle }}">
+
+@if ($resolvedDescription)
+    <meta name="twitter:description" content="{{ $resolvedDescription }}">
+@endif
+
+@if ($image)
+    <meta name="twitter:image" content="{{ $image }}">
 @endif
 
 @if ($faviconUrl)

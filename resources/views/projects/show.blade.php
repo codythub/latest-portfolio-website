@@ -3,12 +3,21 @@
 <head>
     @php
         $siteSettings = \App\Models\SiteSetting::current();
+        
+        $projectShareImage = $project->cover_image ?: $project->thumbnail;
+
+        $projectShareImageUrl = $projectShareImage
+            ? \Illuminate\Support\Facades\Storage::disk('public')->url($projectShareImage)
+            : null;
     @endphp
 
     <x-public.head
         :settings="$siteSettings"
         :title="$project->title"
         :description="$project->summary"
+        :image="$projectShareImageUrl"
+        :url="route('projects.show', $project)"
+        type="article"
     />
 </head>
 

@@ -12,6 +12,9 @@
         :settings="$siteSettings"
         :title="$post->title"
         :description="$post->excerpt"
+        :image="$blogHeroImage"
+        :url="route('blog.show', $post)"
+        type="article"
         :csrf="true"
     />
 </head>

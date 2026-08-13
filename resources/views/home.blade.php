@@ -641,7 +641,7 @@
                                                 class="motion-underline-link mt-6 inline-flex border-b border-[#303136] pb-1 text-base font-medium text-[#303136] transition hover:text-[#111216]"
                                             >
                                                 Read Blog
-                                                <span class="motion-link-arrow ml-1" aria-hidden="true">&nearr;</span>
+                                                <span class="motion-link-arrow ml-1" aria-hidden="true">&#8599;&#65038;</span>
                                             </a>
                                         </div>
                                     </article>
@@ -727,7 +727,7 @@
                                             class="motion-underline-link mt-6 inline-flex border-b border-[#303136] pb-1 text-base font-medium text-[#303136] transition hover:text-[#111216]"
                                         >
                                             View Project
-                                            <span class="motion-link-arrow ml-1" aria-hidden="true">&nearr;</span>
+                                            <span class="motion-link-arrow ml-1" aria-hidden="true">&#8599;&#65038;</span>
                                         </a>
                                     </div>
                                 </article>
