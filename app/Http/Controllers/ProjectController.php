@@ -105,7 +105,7 @@ class ProjectController extends Controller
             )
             ->orderBy('published_at', $sortDirection)
             ->orderBy('display_order')
-            ->paginate(6, ['*'], 'blog_page')
+            ->paginate(5, ['*'], 'blog_page')
             ->withQueryString();
 
 

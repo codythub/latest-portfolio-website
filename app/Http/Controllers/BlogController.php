@@ -35,7 +35,7 @@ class BlogController extends Controller
             })
             ->orderBy('display_order')
             ->orderByDesc('published_at')
-            ->paginate(9)
+            ->paginate(5)
             ->withQueryString();
 
         return view('blog.index', compact(
